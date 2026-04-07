@@ -24,10 +24,30 @@
     <!-- NAVBAR -->
     <nav class="bg-white shadow p-4 flex justify-between">
         <h1 class="font-bold text-pink-600">Bloom Studio</h1>
+
         <div class="space-x-4">
+                    @guest
+                <a href="{{ route('login') }}" 
+                class="text-black-600 font-semibold hover:text-pink-600">
+                    Iniciar sesión
+                </a>
+
+                <a href="{{ route('register') }}" 
+                class="text-black-600 font-semibold hover:text-pink-600">
+                    Registrarse
+                </a>
+            
+        @endguest
+
+        @auth
+            <a href="{{ url('/dashboard') }}" 
+            class=" text-black-600 font-semibold hover:text-pink-600">
+                    Ir al panel
+            </a>
+        @endauth
             <a href="/" class="hover:text-pink-600">Inicio</a>
-            <a href="/servicios" class="hover:text-pink-600">Servicios</a>
-            <a href="/contacto" class="hover:text-pink-600">Contacto</a>
+            <a href="{{route('servicios')}}" class="hover:text-pink-600">Servicios</a>
+            <a href="{{route('contacto')}}" class="hover:text-pink-600">Contacto</a>
         </div>
     </nav>
 
