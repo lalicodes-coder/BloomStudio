@@ -22,16 +22,52 @@ Se centra en:
 - Blade
 - Tailwind CSS
 - HTML5 / CSS3
+- Laravel Breeze (autenticación)
 
 ---
 
 ## 🚀 Funcionalidades
 
-- Página principal con hero visual
+### 🔐 Autenticación
+- Registro de usuarios
+- Inicio y cierre de sesión
+- Redirección personalizada tras login
+
+---
+
+### 📅 Gestión de citas (CRUD)
+- Crear citas
+- Ver listado de citas
+- Editar citas
+- Eliminar citas
+- Relación usuario → citas
+
+### 🎨 Interfaz
+- Página principal (landing)
 - Sección de servicios
-- Página de contacto con formulario
+- Página de contacto
 - Diseño responsive (móvil y escritorio)
-- Layout reutilizable con Blade
+
+---
+
+## 🧱 Arquitectura
+
+- Patrón MVC (Model - View - Controller)
+- Sistema de rutas con middleware (`auth`)
+- Relación 1:N entre usuarios y citas
+- Controladores RESTful (`resource`)
+
+---
+
+## 📌 Estado del proyecto
+
+🟡 En desarrollo
+
+Actualmente incluye un sistema completo de gestión de citas.  
+Pendiente de mejoras como:
+- Validación de solapamiento de horarios
+- Mejora de interfaz de usuario
+- Posible integración de pagos
 
 ---
 
@@ -45,6 +81,9 @@ Se centra en:
 
 ### 📩 Contacto
 <img src="public/images/contacto.png" width="700">
+
+### 📅 Panel de citas
+<img src="public/images/citas.png" width="700">
 
 ---
 
