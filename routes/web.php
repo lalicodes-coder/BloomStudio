@@ -16,11 +16,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::get('/servicios', function () {
-    return view('servicios');
-})->name('servicios');
-Route::get('/contacto', function () {
-    return view('contacto');
-})->name('contacto');
+Route::get('/servicios', function () {return view('servicios');})->name('servicios');
+Route::get('/contacto', function () {return view('contacto');})->name('contacto');
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('appointments', \App\Http\Controllers\AppointmentController::class);
+});
 
 require __DIR__.'/auth.php';

@@ -12,9 +12,19 @@
     <div class="relative z-10">
         <h1 class="text-5xl font-bold mb-4">Bloom Studio</h1>
         <p class="text-xl mb-6">Tu mejor versión empieza aquí</p>
-        <a href="/contacto" class="bg-white text-pink-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">
-            Reserva tu cita
-        </a>
+        @auth
+            <a href="{{ route('appointments.index') }}" 
+            class="bg-white text-pink-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">
+                Ver mis citas
+            </a>
+        @endauth
+
+        @guest
+            <a href="{{ route('login') }}" 
+            class="bg-white text-pink-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">
+                Reserva tu cita
+            </a>
+        @endguest
     </div>
 
 </section>
